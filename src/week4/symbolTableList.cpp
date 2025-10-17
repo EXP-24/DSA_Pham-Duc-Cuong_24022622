@@ -19,8 +19,9 @@ struct SymbolTableList {
     int binarySearch(string key) {
         int l = 0;
         int r = size - 1;
-        int mid = (l+r)/2;
+        
         while (l<= r) {
+            int mid = (l+r)/2;
             if (arr[mid].key == key) {
                 return arr[mid].value;
             }
@@ -31,6 +32,7 @@ struct SymbolTableList {
                 r = mid -1;
             }
         }
+        return -1;
     }
 
     //thêm key vào đúng vị trí để mảng luôn sắp xếp theo key
