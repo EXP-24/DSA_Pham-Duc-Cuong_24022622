@@ -43,6 +43,7 @@ struct linkedList {
         if (head == nullptr) {
             head = newNode;
             tail = newNode;
+            return;
         }
         tail->next = newNode;
         tail = newNode;
@@ -72,6 +73,10 @@ struct linkedList {
 
         Node* newNode = new Node(val, current->next);
         current->next = newNode;
+        tail = current;
+        if (newNode->next == nullptr) {
+            tail = newNode; // cập nhật tail nếu chèn cuối
+        }
     } //Them vao vi tri pos O(n)
 
     void deleteFirst() {
@@ -104,6 +109,7 @@ struct linkedList {
         }
         delete current->next;
         current->next = nullptr;
+        tail = current;
     } //Xoa phan tu cuoi O(n)
 
     void remove(int pos) {
@@ -131,6 +137,7 @@ struct linkedList {
         }
         Node* temp = current->next;
         current->next = temp->next;
+        if (temp == tail) tail = current;
         delete temp;
     } //Xoa vi tri pos O(n)
 
