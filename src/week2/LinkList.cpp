@@ -73,7 +73,6 @@ struct linkedList {
 
         Node* newNode = new Node(val, current->next);
         current->next = newNode;
-        tail = current;
         if (newNode->next == nullptr) {
             tail = newNode; // cập nhật tail nếu chèn cuối
         }
