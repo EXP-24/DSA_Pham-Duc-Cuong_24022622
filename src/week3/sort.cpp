@@ -54,6 +54,10 @@ void mergeSort (int arr[], int size) {
 }
 
 void quickSort(int arr[], int l, int r) {
+    if (l >= r) { // Điều kiện dừng đệ quy
+        return;
+    }
+    
     int i = l;
     int j = r;
     int mid = (l+r)/2;
