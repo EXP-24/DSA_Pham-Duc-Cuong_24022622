@@ -63,7 +63,7 @@ void quickSort(int arr[], int l, int r) {
     int mid = (l+r)/2;
     int pivot  = arr[mid];
 
-    while (i < j) {
+    while (i <= j) {
         while (arr[i] < pivot) {
             i++;
         }
